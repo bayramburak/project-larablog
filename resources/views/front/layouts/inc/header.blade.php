@@ -18,16 +18,11 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="{{route('register')}}">Signup</a></li>
                     <li><a href="{{route('login')}}">Login</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Events</a></li>
-                            <li><a href="#">New Blogs</a></li>
-                            <li><a href="#">Subscribe</a></li>
-                            <li><a href="#">Executive Team</a></li>
-                            <li><a href="#">One more separated link</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="{{route('blog')}}">Blog</a></li>
+                    <li><a href="{{route('events')}}">Events</a></li>
+                    <li><a href="{{route('team')}}">Team</a></li>
+                    <li><a href="{{route('subscribe')}}">Subscribe</a></li>
+
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
