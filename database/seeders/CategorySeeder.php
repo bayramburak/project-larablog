@@ -14,7 +14,11 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
+
+        DB::table('categories')->truncate();
+
         DB::table("categories")->insert(['title'=>'Blog', 'slug'=>'blog']);
         DB::table("categories")->insert(['title'=>'Events', 'slug'=>'events']);
+        DB::table("categories")->insert(['title'=>'Team', 'slug'=>'team']);
     }
 }

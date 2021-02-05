@@ -1,5 +1,5 @@
 @extends('front.layouts.master')
-@section('title','Team')
+@section('title','Subscribe')
 @section('content')
     <!-- subscribe -->
     @include('front.layouts.inc.subscribe')
