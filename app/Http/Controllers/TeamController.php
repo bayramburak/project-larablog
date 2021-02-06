@@ -10,7 +10,11 @@ class TeamController extends Controller
 {
     public function team()
     {
-        $teams = DB::table("teams")->take(10)->get();
-        return view('front.new-team', compact('teams'));
+        //$teams = DB::table('teams')->take(10)->get();
+        $teams = Team::all()->take(10);
+        //dd($teams);
+
+        return view('front.new-team',compact('teams'));
     }
 }
+

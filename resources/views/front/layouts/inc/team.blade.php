@@ -5,6 +5,7 @@
             <h2>Executing Team</h2>
         </div>
         <div class="row">
+
             @foreach($teams as $member)
                 <div class="col-md-3 col-sm-3">
                     <!-- team member -->
