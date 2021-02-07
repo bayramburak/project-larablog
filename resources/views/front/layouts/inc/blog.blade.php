@@ -5,6 +5,7 @@
             <h2>Latest Blogs</h2>
         </div>
         <div class="row">
+
             @foreach($blogs as $post)
             <div class="col-md-6 col-sm-6">
                 <!-- blog entry -->

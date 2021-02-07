@@ -14,7 +14,7 @@
     <!-- events end -->
 
     <!-- blog -->
-    @include('front.layouts.inc.blog')
+    {{--@include('front.layouts.inc.blog')--}}
     <!-- blog end -->
 
     <!-- subscribe -->
@@ -22,6 +22,6 @@
     <!-- subscribe end -->
 
     <!-- team -->
-    @include('front.layouts.inc.team')
+    {{--@include('front.layouts.inc.team')--}}
     <!-- team end -->
 @endsection

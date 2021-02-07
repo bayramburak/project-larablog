@@ -11,6 +11,6 @@ class BlogController extends Controller
     {
         $blogs = Post::all()->take(8);
 
-        return view('front.new-blog',compact('blogs'));
+        return view('front.new-blog', compact('blogs'));
     }
 }

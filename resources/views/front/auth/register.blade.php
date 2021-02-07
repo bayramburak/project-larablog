@@ -7,36 +7,57 @@
             <div class="register-area">
                 <!-- heading -->
                 <h3>Sign Up, For An Account</h3>
-                <form role="form" id="register-form">
+
+                @include('front.layouts.errors.errors')
+
+                <form role="form" id="register-form" method="post" action="{{route('register')}}">
+
+                    {{csrf_field()}}
+
+                    <label class="control-label" for="exampleInputName1">First name <sup style="color: red">*</sup></label>
                     <div class="form-group">
-                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Full Name">
+                        <input type="text" class="form-control" id="exampleInputName1" name="firstName" placeholder="First Name">
+                        @if($errors->has('firstName'))
+                            <strong style="color: red">{{$errors->first('firstName')}}</strong>
+                        @endif
                     </div>
+
+                    <label class="control-label" for="exampleInputName1">Last name <sup style="color: red">*</sup></label>
                     <div class="form-group">
-                        <div class="btn-group" data-toggle="buttons">
-                            <label class="btn btn-info">
-                                <input type="radio" name="options" id="option1" > Male
-                            </label>
-                            <label class="btn btn-info">
-                                <input type="radio" name="options" id="option2"> Female
-                            </label>
-                        </div>
+                        <input type="text" class="form-control" id="exampleInputName1" name="lastName" placeholder="Last Name">
                     </div>
+
+                    <label class="control-label" for="exampleInputPhone1">Phone <sup style="color: red">*</sup></label>
                     <div class="form-group">
-                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                        <input type="text" class="form-control" id="exampleInputPhone1" name="phone" placeholder="Phone">
                     </div>
+
+                    <label class="control-label" for="exampleInputEmail1">Email <sup style="color: red">*</sup></label>
                     <div class="form-group">
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        <input type="text" class="form-control" id="exampleInputEmail1" name="email" placeholder="Enter email">
+                        @if($errors->has('email'))
+                            <strong style="color: red">{{$errors->first('email')}}</strong>
+                        @endif
                     </div>
+
+                    <label class="control-label" for="exampleInputPassword1">Password <sup style="color: red">*</sup></label>
                     <div class="form-group">
-                        <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Re-Password">
+                        <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Password" required>
                     </div>
-                    <div class="checkbox form-group">
-                        <label>
-                            <input type="checkbox"> I agree with all terms and conditions.
-                        </label>
+
+                    <label class="control-label" for="exampleInputPassword2">Password Confirm<sup style="color: red">*</sup></label>
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="exampleInputPassword2" name="password_confirmation" placeholder="Re-Password" required>
                     </div>
-                    <button type="submit" class="btn btn-default">SignUp</button>&nbsp;
-                    <button type="reset" class="btn btn-default">Reset</button>
+
+
+
+                    <p><sup>*</sup>Required field </p>
+
+
+                    <input class="btn btn-large btn-success" type="submit" value="Register"/>
+
+
                 </form>
             </div>
         </div>
