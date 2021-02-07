@@ -1,19 +1,29 @@
-## Ödev (ödev no 9) 10. hafta verilen.
+## Ödev Larablog.
 
 Laravel'e template giydirme projesi.
 
 
 **Ekran görüntüleri:**
 
-(https://hizliresim.com/hFj0qs)
+**Anasayfa**
+![home](public/img/screenshots/0home.jpeg)
 
-(https://hizliresim.com/99MBDo)
+**Blog sekmesi**
+![blog](public/img/screenshots/1blog.jpeg)
 
-(https://hizliresim.com/GrjobC)
+**Event sekmesi**
+![event](public/img/screenshots/2events.jpeg)
 
-(https://hizliresim.com/t7QXOm)
+**Team sekmesi**
+![team](public/img/screenshots/3team.jpeg)
 
-(https://hizliresim.com/e8EuNV)
+**Subscribe sekmesi**
+![subscribe](public/img/screenshots/4subscribe.jpeg)
 
+**Login sekmesi**
+![login](public/img/screenshots/5login.jpeg)
+
+**Register sekmesi**
+![register](public/img/screenshots/6register.jpeg)
 
 
