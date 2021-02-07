@@ -5,25 +5,25 @@ Laravel'e template giydirme projesi.
 
 **Ekran görüntüleri:**
 
-Anasayfa
+**Anasayfa**
 ![home](public/img/screenshots/0home.jpeg)
 
-Blog sekmesi
+**Blog sekmesi**
 ![blog](public/img/screenshots/1blog.jpeg)
 
-Event sekmesi
+**Event sekmesi**
 ![event](public/img/screenshots/2events.jpeg)
 
-Team sekmesi
+**Team sekmesi**
 ![team](public/img/screenshots/3team.jpeg)
 
-Subscribe sekmesi
+**Subscribe sekmesi**
 ![subscribe](public/img/screenshots/4subscribe.jpeg)
 
-Login sekmesi
+**Login sekmesi**
 ![login](public/img/screenshots/5login.jpeg)
 
-Register sekmesi
+**Register sekmesi**
 ![register](public/img/screenshots/6register.jpeg)
 
 
