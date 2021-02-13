@@ -5,14 +5,28 @@
         <div class="container">
             <!-- form content / login area -->
             <div class="login-area">
-                <!-- heading -->
+
+
+            <!-- heading -->
                 <h3>Sign In, To Your Account</h3>
-                <form role="form" id="login-form">
+                <hr class="soft"/>
+
+                @include('front.layouts.errors.errors')
+
+
+                <form role="form" id="login-form" method="post" action="{{route('login')}}" >
+
+
+                    {{csrf_field()}}
+
+                    <label class="control-label" for="exampleInputEmail1">Email</label>
                     <div class="form-group">
-                        <input type="text" class="form-control" id="exampleInputUser1" placeholder="Username">
+                        <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
                     </div>
+
+                    <label class="control-label" for="exampleInputPassword1">Password</label>
                     <div class="form-group">
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                     </div>
                     <div class="checkbox form-group">
                         <label>

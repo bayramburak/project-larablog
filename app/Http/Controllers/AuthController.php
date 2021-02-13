@@ -30,7 +30,7 @@ class AuthController extends Controller
                 'email' => trim($request->email),
                 'password' => Hash::make($request->password),
                 'activation_code' => Str::random(50),
-                'status' => 0
+                'status' => '0'
             ]);
 
             Mail::to($request->email)->send(new UserRegisterMail($user));
@@ -50,7 +50,7 @@ class AuthController extends Controller
 
         $user->update([
             'activation_code' => null,
-            'status' => 1
+            'status' => '1'
         ]);
 
         auth()->login($user);
@@ -59,4 +59,39 @@ class AuthController extends Controller
 
         //return redirect()->to('login');
     }
+
+    public function login(Request $request)
+    {
+        if ($request->isMethod('post')) {
+
+            $this->validate(request(), [
+                'email' => 'required|email',
+                'password' => 'required|min:6|max:20'
+            ]);
+            $credentials = [
+                'email' => $request->email,
+                'password' => $request->password,
+                'status' => '1'
+            ];
+            if (auth()->attempt($credentials)) {
+                $request->session()->regenerate();
+                return redirect()->intended('/');
+            } else {
+                $errors = ['email' => 'Hatalı giriş'];
+                return back()->withErrors($errors);
+            }
+
+        }
+
+        return view('front.auth.login');
+    }
+
+    public function logout()
+    {
+        auth()->logout();
+        request()->session()->flush();
+        request()->session()->regenerate();
+        return redirect()->route('homepage');
+    }
+
 }

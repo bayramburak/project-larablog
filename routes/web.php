@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\admin\AdminController;
+use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\MainController;
@@ -17,10 +19,18 @@ Route::match(['post','get'],'/registration', [AuthController::class, 'register']
 Route::get( '/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get( '/register-confirm/{activation_code}', [AuthController::class, 'registerConfirm'])
     ->name('register-confirmation');
+Route::match(['post', 'get'], 'login', [AuthController::class, 'login'])->name('login');
 
 
 
+Route::group(['prefix' => 'admin', 'namespace' => 'admin'], function () {
+    // Route::get('login',[AdminController::class,'login']);
+    Route::match(['post', 'get'], 'login', [AdminController::class, 'login'])->name('admin.login');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
+    /* ->middleware('admin');;*/
+});
 
-Route::view('/login','front.auth.login')->name('login');
+
+
 Route::view('/events','front.new-events')->name('events');
 Route::view('/subscribe','front.new-subscribe')->name('subscribe');
